@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "My Vite React Extension",
+  "version": "1.0.0",
+  "description": "A Chrome Extension built with Vite + React + TS",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "vite.svg",
+      "48": "vite.svg",
+      "128": "vite.svg"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "icons": {
+    "16": "vite.svg",
+    "48": "vite.svg",
+    "128": "vite.svg"
+  }
+}
