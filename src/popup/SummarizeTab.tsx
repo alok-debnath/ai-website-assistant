@@ -37,7 +37,7 @@ export const SummarizeTab = ({ apiKey }: { apiKey: string }) => {
       >
         {loading ? "Summarizing..." : "Summarize Current Page"}
       </button>
-      <div className="prose max-w-none">
+      <div className="output-section max-w-none">
         {summary && (
           <div>
             <Markdown>{summary}</Markdown>

@@ -44,7 +44,7 @@ export const AskTab = ({ apiKey }: { apiKey: string }) => {
       >
         {loading ? "Asking..." : "Ask Gemini"}
       </button>
-      <div className="prose max-w-none">
+      <div className="output-section max-w-none">
         {answer && (
           <div>
             <Markdown>{answer}</Markdown>
