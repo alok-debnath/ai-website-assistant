@@ -1,69 +1,117 @@
-# React + TypeScript + Vite
+# AI Website Assistant – Chrome Extension
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, production-ready Chrome Extension built with **React + Vite + TypeScript + Tailwind CSS**, integrating **Google Gemini Flash 2.5 API**.
 
-Currently, two official plugins are available:
+> ✨ Summarize any webpage
+> 🗮️ Ask AI questions based on page content
+> 🔐 Securely store your Gemini API key locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* 🔑 Ask for your **Gemini API key** only once and securely store it using Chrome's `storage.local`
+* 📄 **Summarize** the full webpage content with a single click
+* ❓ **Ask custom questions** based on the text content of the page
+* 🧠 Powered by **Gemini Flash 2.5 (Google)** via `generativelanguage.googleapis.com`
+* 💎 **Beautiful UI** using Tailwind CSS
+* ⚡️ Fully optimized, lightweight, and production-ready
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* [React](https://react.dev/)
+* [Vite](https://vitejs.dev/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [Tailwind CSS](https://tailwindcss.com/)
+* Chrome Extension APIs (Manifest V3)
+* Google Gemini API (Flash 2.5)
+
+---
+
+## 📁 Folder Structure
+
+```
+your-project/
+├── public/
+│   ├── icon.png               # Extension icon
+│   └──manifest.json           # Chrome extension manifest (MV3)
+├── src/
+│   ├── popup/                 # React popup components
+│   │   ├── Popup.tsx
+│   │   ├── ApiKeyPrompt.tsx
+│   │   ├── SummarizeTab.tsx
+│   │   └── AskTab.tsx
+│   └── utils/
+│       └── gemini.ts          # Gemini API request handler
+├── index.html                 # React entrypoint
+├── vite.config.ts             # Vite build config
+├── package.json
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Setup & Installation
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. **Clone the Repo**
+
+```bash
+git clone https://github.com/alok-debnath/ai-website-assistant.git
+cd ai-website-assistant
 ```
+
+### 2. **Install Dependencies**
+
+```bash
+npm install
+```
+
+### 3. **Build the Extension**
+
+```bash
+npm run build
+```
+
+> This will generate a `dist/` folder with all required extension files.
+
+### 4. **Load into Chrome**
+
+* Open `chrome://extensions`
+* Enable **Developer mode**
+* Click **Load unpacked**
+* Select the `dist/` folder
+
+---
+
+## 🥪 Usage
+
+1. Click the extension icon → It will prompt for your **Gemini API Key** (stored securely)
+2. Use one of the two tabs:
+
+   * **Summarize**: Click to generate a summary of the current page
+   * **Ask**: Ask custom questions related to the content of the page
+3. Gemini's response will be shown inside the popup in real-time.
+
+---
+
+## 🔐 API Key Security
+
+* Your API key is stored only using `chrome.storage.local`
+* Never sent to any third-party server (only directly to Gemini API)
+
+<!-- ---
+
+## 🔮 Future Improvements
+
+* ✅ Dark mode support
+* ✅ Save prompt/response history
+* ✅ Context menu actions (right-click to summarize)
+* ✅ Gemini model switching (Flash / Pro) -->
+
+---
+
+## 📄 License
+
+MIT License © [alok-debnath](https://github.com/alok-debnath). You can find a copy of the license text here: [`LICENSE`](LICENSE).
