@@ -20,7 +20,7 @@ export const SummarizeTab = ({ apiKey }: { apiKey: string }) => {
       },
       async (res) => {
         const pageText = res[0].result;
-        const prompt = `Summarize this web page content:\n${pageText}`;
+        const prompt = `Summarize this web page content (you can respond in markdown format and use bullets etc for better visual experience):\n${pageText}`;
         const result = await askGemini(prompt, apiKey);
         setSummary(result);
         setLoading(false);
