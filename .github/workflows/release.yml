@@ -28,7 +28,7 @@ jobs:
         run: |
           mkdir chrome-extension
           cp -r dist/* chrome-extension/
-          cp manifest.json chrome-extension/
+          cp public/manifest.json chrome-extension/
           cp -r public/* chrome-extension/ || true
 
       - name: 📦 Zip extension as dist-chrome.zip
