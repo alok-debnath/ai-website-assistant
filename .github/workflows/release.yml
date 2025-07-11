@@ -29,13 +29,13 @@ jobs:
 
       - name: 📁 Prepare extension for packaging
         run: |
-          mkdir chrome-extension
-          cp -r dist/* chrome-extension/
-          cp public/manifest.json chrome-extension/
-          cp -r public/* chrome-extension/ || true
+          mkdir ai-website-assistant
+          cp -r dist/* ai-website-assistant/
+          cp public/manifest.json ai-website-assistant/
+          cp -r public/* ai-website-assistant/ || true
 
       - name: 📦 Zip extension as dist-chrome.zip
-        run: zip -r dist-chrome.zip chrome-extension
+        run: zip -r dist-chrome.zip ai-website-assistant
 
       - name: 🚀 Create GitHub release with zip
         uses: softprops/action-gh-release@v1
