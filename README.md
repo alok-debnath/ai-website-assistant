@@ -33,7 +33,7 @@ A modern, production-ready Chrome Extension built with **React + Vite + TypeScri
 ## 📁 Folder Structure
 
 ```
-your-project/
+ai-website-assistant/
 ├── public/
 │   ├── icon.png               # Extension icon
 │   └──manifest.json           # Chrome extension manifest (MV3)
